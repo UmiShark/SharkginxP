@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta content="Sharkginx" property="og:title" />
+      <meta content="Palladium redesigned" property="og:description" />
+      <meta content="https://egams.herokuapp.com" property="og:url" />
+      <meta content="https://imgur.com/KBhAAbP.png" property="og:image" />
+      <meta content="#0000FF" data-react-helmet="true" name="theme-color" />
+      <meta charset="UTF-8" />
+      <script src="https://kit.fontawesome.com/a407859c32.js" crossorigin="anonymous"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+      <link href="style.css" rel="stylesheet" />
+      <link rel="shortcut icon" type="image/png" href="https://imgur.com/CYEoL03.png" />
+      <title>Sharkginx</title>
+	<style>
+		body {
+			--text-color: #1a1a1a;
+			--bkg-color: #fff;
+			--txt-color: #1a1a1a;
+			--ld-color: #1a1a1a;
+			--iURL: url("https://imgur.com/v5ogWAU.png");
+			--pos: 0px;
+			--pos1: 24px;
+		}
+
+		body.dark-theme {
+			--text-color: #808080;
+			--txt-color: #fff;
+			--bkg-color: #1a1a1a;
+			--ld-color: #fff;
+			--iURL: url("https://imgur.com/RK3wIvk.png");
+			--pos: 24px;
+			--pos1: 0px;
+		}
+
+		@media (prefers-color-scheme: dark) {
+			/* defaults to dark theme */
+			body {
+				--text-color: #808080;
+				--txt-color: #fff;
+				--bkg-color: #1a1a1a;
+				--ld-color: #fff;
+				--iURL: url("https://imgur.com/RK3wIvk.png");
+				--pos: 24px;
+				--pos1: 0px;
+			}
+			body.light-theme {
+				--text-color: #1a1a1a;
+				--txt-color: #1a1a1a;
+				--bkg-color: #fff;
+				--ld-color: #1a1a1a;
+				--iURL: url("https://imgur.com/v5ogWAU.png");
+				--pos: 0px;
+				--pos1: 24px;
+			}
+		}
+
+		body {
+			font-family: "Open Sans", sans-serif;
+			font-size: "25px";
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			background: var(--bkg-color);
+			transition-duration: 0.2s;
+			transition-timing-function: ease-out;
+		}
+
+		.dark-mode {
+			font-family: "Open Sans", sans-serif;
+			font-size: "25px";
+			text-align: center;
+			background-color: #1a1a1a;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		label {
+			position: relative;
+		}
+
+		.container {
+			position: relative;
+		}
+
+		.image {
+			content: var(--iURL);
+			height: 42px;
+			width: 42px;
+		}
+
+		.sharkginx {
+			margin-top: 10%;
+			margin-bottom: 30px;
+			user-select: none;
+			pointer-events: none;
+		}
+
+		.input {
+			transition-timing-function: ease-out;
+			transition-duration: 0.2s;
+			font-family: "Open Sans", sans-serif;
+			padding: 7px 15px;
+			line-height: 30px;
+			border-radius: 20px;
+			width: 31vw;
+			background: var(--bkg-color);
+			border: 1px solid var(--text-color);
+			color: var(--txt-color);
+		}
+
+		.input:focus {
+			box-shadow: 0 0 20px #0091FF;
+      webkit-box-shadow: 0 0 20px #0091FF;
+			outline: none;
+		}
+
+		.button {
+			font-family: "Open Sans", sans-serif;
+			transition-duration: 0.2s;
+			transition-timing-function: ease-out;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			padding: 7px 15px;
+			border-top-right-radius: 20px;
+			border-bottom-right-radius: 20px;
+			background: var(--bkg-color);
+			color: var(--text-color);
+			border: 1px solid var(--text-color);
+		}
+
+		.button:hover {
+			background: linear-gradient(270deg, #17b5ff, #178cff, #1759ff);
+			background-size: 400%;
+			animation: animate 2s linear infinite;
+			color: white;
+		}
+
+		@keyframes animate {
+			0% {
+				background-position: 0% 50%
+			}
+			50% {
+				background-position: 100% 50%
+			}
+			100% {
+				background-position: 0% 50%
+			}
+		}
+
+		.icon-pos {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: fixed;
+			bottom: 25px;
+			width: 100%;
+		}
+
+		.discord {
+			margin-top: 40px;
+			color: var(--ld-color);
+			border-radius: 50%;
+			background-color: var(--bkg-color);
+			border: 1px solid var(--text-color);
+			width: 42px;
+			height: 42px;
+			font-size: 20px;
+			display: flex;
+			margin-right: 3px;
+			margin-left: 3px;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			transition-duration: 0.2s;
+			transition-timing-function: ease-out;
+			text-decoration: none;
+		}
+
+		.discord:hover {
+			border: 1px solid var(--ld-color);
+			background: var(--ld-color);
+			color: var(--bkg-color);
+			box-shadow: 0 0 20px #0091FF;
+		}
+
+		button:focus {
+			outline: none;
+		}
+
+		.img {
+			margin-top: 40px;
+		}
+
+
+
+		.checkbox {
+			opacity: 0;
+			position: absolute;
+		}
+
+		.label {
+			border: 1px solid var(--text-color);
+			margin-left: 93%;
+			margin-top: 1%;
+			margin-bottom: 40px;
+			background-color: var(--bkg-color);
+			border-radius: 20px;
+			cursor: pointer;
+			display: flex;
+			align-items: start;
+			justify-content: space-between;
+			padding: 5px;
+			position: relative;
+			height: 16px;
+			width: 40px;
+			transform: scale(1.5);
+			transition-duration: 0.2s;
+			transition-timing-function: ease-out;
+		}
+
+		.label .ball {
+			background-color: var(--ld-color);
+			border-radius: 50%;
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			height: 22px;
+			width: 22px;
+			transform: translateX(var(--pos));
+			transition: transform 0.2s linear;
+		}
+
+		.checkbox:checked+.label .ball {
+			transform: translateX(var(pos1));
+		}
+
+		.label:hover {
+			box-shadow: 0 0 20px #0091FF;
+		}
+
+		.fa-moon {
+			color: var(--ld-color);
+		}
+
+		.fa-sun {
+			color: var(--ld-color);
+		}
+	</style>
+</head>
+
+<body>
+	<input type="checkbox" class="checkbox" id="chk" />
+      <label class="label" for="chk">
+         <i class="fas fa-moon"></i>
+         <i class="fas fa-sun"></i>
+         <div class="ball"></div>
+      </label>
+      </input>
+      <div class="sharkginx">
+         <img src="https://imgur.com/dq7ARCE.png" >
+      </div>
+
+      <form class="container" method="POST" action="/shark/gateway">
+
+        <input 
+        class="input"
+          name="url"
+        required oninvalid="(() => {this.setCustomValidity(' ');document.getElementById('error-disc').style.display = 'block'})()" 
+        autocomplete=off
+        
+        maxlength="250" id="url-input" 
+        placeholder="Search or type a URL">
+        <button class="button"><i class="fa fa-search"></i></button>
+        
+        </form>
+
+        <div class="icon-pos">
+         <a href="/shark/gateway/?url=https://discord.com/app"
+            target="_blank"
+            class="discord">
+         <i class="fab fa-discord"></i>
+         </a>
+         <a href="/shark/gateway/?url=https://www.twitch.tv/"
+            target="_blank"
+            class="discord">
+         <i class="fab fa-twitch"></i>
+         </a>
+      </div>
+
+      
+    <script>
+    const btn = document.querySelector(".checkbox");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme == "dark") {
+  document.body.classList.toggle("dark-theme");
+
+} else if (currentTheme == "light") {
+  document.body.classList.toggle("light-theme");
+}
+
+btn.addEventListener("click", function () {
+  if (prefersDarkScheme.matches) {
+    document.body.classList.toggle("light-theme");
+    var theme = document.body.classList.contains("light-theme")
+      ? "light"
+      : "dark";
+  } else {
+    document.body.classList.toggle("dark-theme");
+    var theme = document.body.classList.contains("dark-theme")
+      ? "dark"
+      : "light";
+  }
+  localStorage.setItem("theme", theme);
+});
+</script>
+  </body>
+</html>
